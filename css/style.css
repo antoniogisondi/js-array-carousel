@@ -3,3 +3,30 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: rgba(140, 45, 184, 0.795);
+}
+
+.container{
+    background-color: crimson;
+    width: 800px;
+    height: 500px;
+    margin: 100px auto;
+}
+
+.slider, .slide{
+    width: 100%;
+    height: 100%;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.active img{
+    display: block;
+}
