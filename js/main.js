@@ -7,20 +7,33 @@ let slider = document.querySelector(".slider")
 let slide = ''
 
 for(i=0; i < image.length; i++){
-    
     current_image = image[i]
     slide = `<div class="slide">img src"${current_image}"></div>`
 }
 
-slider.innerHTML = slide;
 
 let all_slide = document.getElementsByClassName("slide")
 let active = 0;
 all_slide[active].classList.add("active")
 
-let next_btn = document.querySelector("next")
-let prev_btn = document.querySelector("previous")
+let next_btn = document.querySelector(".next")
+let prev_btn = document.querySelector(".prev")
+console.log(prev_btn, next_btn)
 
-console.log(next_btn, prev_btn)
+next_btn.addEventListener('click', function(){
+    if(active < (image.length - 1)){
+        all_slide[active].classList.remove("active")
+        active++
+        all_slide[active].classList.add("active")
+    }
+})
+
+prev_btn.addEventListener('click', function(){
+    if(active > 0){
+        all_slide[active].classList.remove("active")
+        active--
+        all_slide[active].classList.add("active")
+    }
+})
 
 
